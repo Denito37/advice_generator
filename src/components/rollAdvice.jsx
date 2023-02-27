@@ -1,20 +1,25 @@
-import { useState } from "react"
-import { Dice, DividerMobile, DividerDesktop } from '../assets';
+import { useState, useEffect } from "react"
+import { Dice, DividerDesktop } from '../assets';
 
 
-export default function Advice(){
+export default function Advice({counter}){
     const [advice, setAdvice] = useState('Roll for advice')
     const [id, setId] = useState('0')
-    
+
+    useEffect(() =>{
+        //getQuote();
+    },[])
+
     const getQuote = async () =>{
         const res = await fetch("https://api.adviceslip.com/advice" , { cache: "no-cache" });// * no-cache prevents repeated advice
         const data = await res.json();
         setAdvice(data.slip.advice);
         setId(data.slip.id)
+        counter()
     }
 
     return(
-        <div>
+        <>
             <section className="grid p-8 bg-slate-600 max-w-md min-h-fit border-0 rounded-2xl mx-auto my-8 relative">
                 <h4 className=" text-green-400 text-center text-xl font-bold">Advice# {id} </h4>
                 <p className=" text-white text-center h-40 text-3xl overflow-scroll">{advice}</p>
@@ -24,6 +29,6 @@ export default function Advice(){
                     <img src={Dice} alt="roll dice" />
                 </button>
             </section>
-        </div>
+        </>
     )
 }

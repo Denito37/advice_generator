@@ -1,10 +1,5 @@
-import { useState } from "react";
 
-export default function Header(){
-    const [count, setCount] = useState(0);
-    const counter = () =>{
-        setCount(count + 1)
-    }
+export default function Header({count}){
     return(
         <div className="px-4 py-1 w-fit mx-auto rounded-3xl bg-slate-700">
             <header>

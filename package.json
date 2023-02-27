@@ -3,11 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://denito37.github.io/advice_generator/",
+  "homepage": "https://denito37.github.io/advice_generator",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
-    "deploy" : "gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "build": "vite build",
     "preview": "vite preview"
   },
