@@ -1,32 +1,20 @@
-import { useState, useEffect } from "react"
 import { Dice, DividerDesktop } from '../assets';
 
-
-export default function Advice({counter}){
-    const [advice, setAdvice] = useState('Roll for advice')
-    const [id, setId] = useState('0')
-
-    useEffect(() =>{
-        //getQuote();
-    },[])
-
+export default function Advice({counter , setQuote, advice, id}){
     const getQuote = async () =>{
-        const res = await fetch("https://api.adviceslip.com/advice" , { cache: "no-cache" });// * no-cache prevents repeated advice
-        const data = await res.json();
-        setAdvice(data.slip.advice);
-        setId(data.slip.id)
+        setQuote()
         counter()
     }
 
     return(
         <>
-            <section className="grid p-8 bg-slate-600 max-w-md min-h-fit border-0 rounded-2xl mx-auto my-8 relative">
+            <section className="grid bg-slate-600 max-w-md min-h-fit border-0 rounded-2xl p-8 mx-auto my-8 relative ">
                 <h4 className=" text-green-400 text-center text-xl font-bold">Advice# {id} </h4>
-                <p className=" text-white text-center h-40 text-3xl overflow-scroll">{advice}</p>
+                <p className=" text-slate-200 text-center h-40 text-3xl overflow-scroll">{advice}</p>
                 <img src={DividerDesktop} alt="divider" className="my-4" />
                 <button 
                 className="dice border border-green-500 text-white bg-green-400 p-4 mx-auto my-2 w-14 h-14 rounded-full" onClick={getQuote}>
-                    <img src={Dice} alt="roll dice" />
+                    <img src={Dice} alt="roll dice" className="hover:rotate-180 transition-all" />
                 </button>
             </section>
         </>

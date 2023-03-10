@@ -6,9 +6,12 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
+}
+body{
+  --tw-bg-opacity: 1;
+    background-color: rgb(51 65 85 / var(--tw-bg-opacity));
 }
 .dice{
   position: absolute;
