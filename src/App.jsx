@@ -28,7 +28,7 @@ function App() {
   }
 
   return (
-    <div className=" md:grid md:grid-cols-2 md:max-w-4xl md:mx-auto md:gap-x-4">
+    <div className=" mx-6 md:grid md:grid-cols-2 md:max-w-4xl md:mx-auto md:gap-x-4">
       <div>
       <Header count = {count} />
       <Roll advice={advice} id = {id} counter={counter} setQuote = {setQuote} />

@@ -8,7 +8,7 @@ export default function Advice({counter , setQuote, advice, id}){
 
     return(
         <>
-            <section className="grid bg-slate-600 max-w-md min-h-fit border-0 rounded-2xl p-8 mx-auto my-8 relative ">
+            <section className="grid bg-slate-700 max-w-md min-h-fit border-0 rounded-2xl p-8 mx-auto my-8 relative ">
                 <h4 className=" text-green-400 text-center text-xl font-bold">Advice# {id} </h4>
                 <p className=" text-slate-200 text-center h-40 text-3xl overflow-scroll">{advice}</p>
                 <img src={DividerDesktop} alt="divider" className="my-4" />
