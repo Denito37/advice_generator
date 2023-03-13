@@ -10,6 +10,7 @@ function App() {
   const [advice, setAdvice] = useState('Roll for advice')
   const [id, setId] = useState(0)
   const [like, setLike] = useState([])
+  let itemsArray = localStorage.getItem('advice') ? JSON.parse(localStorage.getItem('advice')) : [];
 
   const setQuote = async () =>{
     const res = await fetch("https://api.adviceslip.com/advice" , {cache:"no-cache" });// * no-cache prevents repeated advice
@@ -22,9 +23,14 @@ function App() {
   } 
   const saveQuote = () =>{
     setLike([...like, advice])
+    
+    itemsArray.push(advice)
+    localStorage.setItem('advice', JSON.stringify(itemsArray));
   }
   const deleteQuote = () =>{
-    setLike(['boom'])
+    setLike([])
+    localStorage.clear();
+    itemsArray = [];
   }
 
   return (
@@ -34,7 +40,7 @@ function App() {
       <Roll advice={advice} id = {id} counter={counter} setQuote = {setQuote} />
       <Buttons save={saveQuote} trash = {deleteQuote} />
       </div>
-      <Likes list={like} />
+      <Likes storage={itemsArray} />
       <Footer />
     </div>
   )

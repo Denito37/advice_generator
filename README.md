@@ -2,10 +2,12 @@
 - TailwindCSS
 - ReactJS
 - Advice slip API
+- Local Storage web API
 
 **Features:**
 
 - Generate a quote by tapping the 'dice' button
+- save quotes in the likes section
 
 **Purpose:**
 
