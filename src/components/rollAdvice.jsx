@@ -13,7 +13,7 @@ export default function Advice({counter , setQuote, advice, id}){
                 <p className=" text-slate-200 text-center pb-2 h-40 text-3xl overflow-scroll">{advice}</p>
                 <img src={DividerDesktop} alt="divider" className="my-4" />
                 <button 
-                className="dice hover:animate-spin border border-green-500 text-white bg-green-400 p-4 mx-auto my-2 w-14 h-14 rounded-full" onClick={getQuote}>
+                className="dice md:hover:animate-spin border border-green-500 text-white bg-green-400 p-4 mx-auto my-2 w-14 h-14 rounded-full" onClick={getQuote}>
                     <img src={Dice} alt="roll dice" className=" transition-all" />
                 </button>
             </section>
