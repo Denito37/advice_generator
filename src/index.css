@@ -10,13 +10,7 @@
   font-weight: 400;
 }
 body{
-  --tw-bg-opacity: 1;
-    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-}
-.dice{
-  position: absolute;
-  bottom: -2rem;
-  left: 44%;
+  background-color: #111827;
 }
 .btn img{
   width: 1.5rem;
