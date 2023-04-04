@@ -6,7 +6,6 @@ import Buttons from './components/buttons'
 import Likes from './components/likes'
 import Footer from './components/footer'
 
-
 function App() {
   const [count, setCount] = useState(0);
   const [advice, setAdvice] = useState('Roll for advice')
@@ -14,6 +13,9 @@ function App() {
   const [like, setLike] = useState([])
   let itemsArray = localStorage.getItem('advice') ? JSON.parse(localStorage.getItem('advice')) : [];
 
+  const counter = () =>{
+    setCount(count + 1)
+  } 
   const setQuote = async () =>{
     setAdvice(<Loading />)
     const res = await fetch("https://api.adviceslip.com/advice", {cache:"no-cache"} )
@@ -23,9 +25,6 @@ function App() {
       setAdvice(data.slip.advice)
     }, 300)
   }
-  const counter = () =>{
-    setCount(count + 1)
-  } 
   const saveQuote = () =>{
     setLike([...like, advice])
     itemsArray.push(advice)
@@ -37,7 +36,9 @@ function App() {
     localStorage.clear();
   }
   const removeQuote = (e) =>{
-      console.log(e.target.previousSibling.innerHTML)
+      itemsArray.splice(itemsArray.indexOf(e.target.previousSibling.innerHTML),1)
+      localStorage.setItem('advice', JSON.stringify(itemsArray));
+      setLike([...itemsArray])
   }
 
   return (

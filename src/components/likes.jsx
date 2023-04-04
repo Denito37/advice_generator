@@ -2,10 +2,12 @@
 export default function Likes({storage, remove}){
     let key = 0
     const likeList = storage.map(store =>
-    <div className=" grid grid-cols-6">
-        <li className=" marker:content-['-'] indent-3 py-1 col-span-5" key={key++}>{store}</li>
-        <button onClick = {remove} className=" text-xs py-2 px-4 w-fit h-fit bg-gray-700 text-green-400 justify-self-center rounded-full border border-transparent">X</button>
-    </div>)
+        <div key={key} className=" grid grid-cols-6">
+            <li className=" marker:content-['-'] indent-3 py-1 mx-1 col-span-5" key={key++}>{store}</li>
+            <button key={key} onClick = {remove} className=" py-2 px-4 w-fit h-fit bg-gray-700 text-green-400 hover:bg-gray-600 justify-self-center rounded-full border border-transparent">
+                ×
+            </button>
+        </div>)
     
     return(
         <section className="bg-gray-800 rounded-2xl max-w-md md:min-w-full mx-auto my-12 p-8">

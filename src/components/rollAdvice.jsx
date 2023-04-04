@@ -1,5 +1,4 @@
 import { Dice, DividerDesktop } from '../assets';
-import Loading from './loading.jsx';
 
 export default function Advice({counter , setQuote, advice, id}){
     const getQuote = async () =>{

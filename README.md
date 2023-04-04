@@ -9,6 +9,7 @@ Based on a Frontend Mentor challenge
 **Features:**
 - Generate a quote by tapping the 'dice' button
 - save quotes in the likes section
+- remove quotes from likes section or trash it all
 
 **Purpose:**
 - To practice creating an app like experience 
