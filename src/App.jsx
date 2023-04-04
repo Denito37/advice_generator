@@ -18,8 +18,10 @@ function App() {
     setAdvice(<Loading />)
     const res = await fetch("https://api.adviceslip.com/advice", {cache:"no-cache"} )
     const data = await res.json()
-    setId(data.slip.id)
-    setAdvice(data.slip.advice)
+    setTimeout(() =>{
+      setId(data.slip.id)
+      setAdvice(data.slip.advice)
+    }, 300)
   }
   const counter = () =>{
     setCount(count + 1)
