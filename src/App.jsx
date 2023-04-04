@@ -36,6 +36,9 @@ function App() {
     itemsArray = [];
     localStorage.clear();
   }
+  const removeQuote = (e) =>{
+      console.log(e.target.previousSibling.innerHTML)
+  }
 
   return (
     <div className=" mx-6 md:grid md:grid-cols-2 md:max-w-4xl md:mx-auto md:gap-x-4">
@@ -44,7 +47,7 @@ function App() {
       <Roll advice={advice} id = {id} counter={counter} setQuote = {setQuote} />
       <Buttons save={saveQuote} trash = {deleteQuote} />
       </div>
-      <Likes storage={itemsArray} />
+      <Likes storage={itemsArray} remove={removeQuote} />
       <Footer />
     </div>
   )
