@@ -41,6 +41,19 @@ function App() {
       setLike([...itemsArray])
   }
 
+  function keyControls(control){
+    if(control.key === 'Enter'){
+      setQuote()
+    }
+    if(control.key === 'S'){
+      saveQuote()
+    }
+    if(control.key === 'Backspace'){
+      deleteQuote()
+    }
+  }
+  //document.addEventListener('keydown', keyControls)
+
   return (
     <div className=" mx-6 md:grid md:grid-cols-2 md:max-w-4xl md:mx-auto md:gap-x-4">
       <div className=' md:my-12'>

@@ -4,7 +4,7 @@ export default function Footer(){
         <>
             <footer className="text-center col-span-2 p-4 mx-auto md:grid md:grid-cols-3 md:max-w-lg">
                 <h2 className=" text-slate-100 text-lg p-1">
-                    <a className=" p-2 rounded-md transition-colors hover:bg-gray-800 hover:text-green-400" href="https://denito37.github.io/wdp/" target="_blank" rel="noopener noreferrer">
+                    <a className=" p-2 rounded-md transition-colors hover:bg-gray-800 hover:text-green-400" href="https://dev-portfolio-denito37.vercel.app" target="_blank" rel="noopener noreferrer">
                         Portfolio   
                     </a>
                 </h2>
